@@ -99,7 +99,7 @@ def generate_dungeon(
         else:  # All rooms after the first.
             # Dig out a tunnel between this room and the previous one.
             for x, y in tunnel_between(rooms[-1].center, new_room.center):
-                dungeon.tiles[x. y] = tile_types.floor
+                dungeon.tiles[x, y] = tile_types.floor
 
         # Finally, append the new room to the list.
         rooms.append(new_room)
