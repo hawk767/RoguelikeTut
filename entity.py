@@ -8,16 +8,18 @@ if TYPE_CHECKING:
 
 T = TypeVar("T", bound="Entity")
 
+
 class Entity:
     """
     A Generic object to represent players, enemies, items, etc.
     """
+
     def __init__(
         self,
         x: int = 0,
         y: int = 0,
         char: str = "?",
-        color: Tuple[int, int, int] = [255, 255, 255],
+        color: Tuple[int, int, int] = (255, 255, 255),
         name: str = "<Unnamed>",
         blocks_movement: bool = False,
     ):

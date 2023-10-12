@@ -1,4 +1,5 @@
 from __future__ import annotations
+
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
@@ -34,6 +35,7 @@ class ActionWithDirection(Action):
     def perform(self, engine: Engine, entity: Entity) -> None:
         raise NotImplementedError()
     
+    
 class MeleeAction(ActionWithDirection):
     def perform(self, engine: Engine, entity: Entity) -> None:
         dest_x = entity.x + self.dx
@@ -46,8 +48,6 @@ class MeleeAction(ActionWithDirection):
 
 
 class MovementAction(ActionWithDirection):
-
-
     def perform(self, engine: Engine, entity: Entity) -> None:
         dest_x = entity.x + self.dx
         dest_y = entity.y + self.dy
@@ -60,6 +60,7 @@ class MovementAction(ActionWithDirection):
             return  # Destination is blocked by an entity.
         
         entity.move(self.dx, self.dy)
+        
 
 class BumpAction(ActionWithDirection):
     def perform(self, engine: Engine, entity: Entity) -> None:

@@ -20,7 +20,7 @@ class Engine:
         for entity in self.game_map.entities - {self.player}:
             print(f'The {entity.name} wonders when it will get to take a real turn.')
 
-    def handle_events(self, events: Iterable[any]) -> None:
+    def handle_events(self, events: Iterable[Any]) -> None:
         for event in events:
             action = self.event_handler.dispatch(event)
 
@@ -43,7 +43,6 @@ class Engine:
             
     def render(self, console: Console, context: Context) -> None:
         self.game_map.render(console)
-
 
         context.present(console)
 
